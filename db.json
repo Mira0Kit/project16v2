@@ -1,0 +1,44 @@
+{
+  "workers": [
+    {
+      "name": "Сидр",
+      "surname": "Сидоровв",
+      "patronymic": "Иванович",
+      "number": "+7(653)895-26-34",
+      "email": "sidr@mail.ru",
+      "birthdate": "09.02.1994",
+      "type": 2,
+      "id": 2
+    },
+    {
+      "name": "Иван",
+      "surname": "Зимонин",
+      "patronymic": "Константинович",
+      "number": "+7(777)777-77-77",
+      "email": "xeroxtwothree@mail",
+      "birthdate": "11.12.1985",
+      "type": 1,
+      "id": 3
+    },
+    {
+      "name": "Петр",
+      "surname": "Петров",
+      "patronymic": "Петрович",
+      "number": "+7(124)154-23-52",
+      "email": "ivanovww@ma",
+      "birthdate": "11.01.1965",
+      "type": 3,
+      "id": 4
+    },
+    {
+      "name": "Иван",
+      "surname": "Иванов",
+      "patronymic": "Иванович",
+      "number": "+7(333)333-33-33",
+      "email": "ivanovww@mail.ru",
+      "birthdate": "22.04.1955",
+      "type": 0,
+      "id": 5
+    }
+  ]
+}

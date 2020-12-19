@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <form [formGroup]="workerForm">
+        <div class="form-group">
+            <label for="workername">Имя</label>
+            <input type="text" class="form-control" formControlName="name" id="workername" placeholder="Имя">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['name'].invalid && workerForm.controls['name'].touched">
+                Некорректное имя
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workersurname">Фамилия</label>
+            <input type="text" class="form-control" formControlName="surname" id="workersurname" placeholder="Фамилия">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['surname'].invalid && workerForm.controls['surname'].touched">
+                Некорректная фамилия
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workerpatronymic">Отчество</label>
+            <input type="text" class="form-control" formControlName="patronymic" id="workerpatronymic" placeholder="Отчество">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['patronymic'].invalid && workerForm.controls['patronymic'].touched">
+                Некорректное отчество
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workernumber">Телефон</label>
+            <input [textMask]="{mask: numMask}" type="text" class="form-control" formControlName="number" placeholder="Телефон"
+                id="workernumber">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['number'].invalid && workerForm.controls['number'].touched">
+                Некорректный номер телефона
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workeremail">Email</label>
+            <input type="text" class="form-control" formControlName="email" placeholder="name@example.com" id="workeremail">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['email'].invalid && workerForm.controls['email'].touched">
+                Некорректный email
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workerbirthdate">Дата рождения</label>
+            <input [textMask]="{mask: birthMask}" type="text" class="form-control" formControlName="birthdate" placeholder="DD.MM.YYYY">
+            <div class="alert alert-danger"
+                *ngIf="workerForm.controls['birthdate'].invalid && workerForm.controls['birthdate'].touched">
+                Некорректная дата
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="workertype">Отдел</label>
+            <select class="form-control" formControlName="type" id="workertype">
+                <option [ngValue]="mworkerType.it">IT</option>
+                <option [ngValue]="mworkerType.sales">Продажи</option>
+                <option [ngValue]="mworkerType.delivery">Доставка</option>
+                <option [ngValue]="mworkerType.legal">Юридический</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" [disabled]="workerForm.invalid" (click)="onSave()">
+            Сохранить</button>
+        <button class="btn btn-danger ml-3" *ngIf="id != null" (click)="onDelete()">
+            Удалить</button>
+    </form>
+</div>

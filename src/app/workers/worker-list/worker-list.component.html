@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mb-2 mt-2">
+            <h5>Поиск сотрудников</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 mb-4">
+            <input type="text" class="form-control" placeholder="Поиск сотрудников" [(ngModel)]="searchStr">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid table-responsive-md" >
+    <table id="table-id" class="table table-hover" >
+        <thead class="thead-ligh">
+            <tr>
+                <th scope="col" data-sort-default >#</th>
+                <th scope="col" data-sort-method='none' class="no-sort" >Имя</th>
+                <th scope="col" data-sort-method='none' class="no-sort" >Фамилия</th>
+                <th scope="col">Возраст</th>
+                <th scope="col" data-sort-method='none' class="no-sort" >Отдел</th>
+                <th scope="col" data-sort-method='none' class="no-sort text-right">
+                    <button class="btn btn-primary" (click)="onAddProfile()">Добавить сотрудника</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let worker of workers | workerFilter : searchStr">
+                <th scope="row">{{worker.id}}</th>
+                <td>{{worker.name}}</td>
+                <td>{{worker.surname}}</td>
+                <td>{{today | amDifference : (worker.birthdate | amParse:'DD.MM.YYYY') : 'years' : false}}</td>
+                <td>{{ruWorkerType[worker.type]}}</td>
+                <!-- <td [ngSwitch]="worker.type">
+                    <p *ngSwitchCase="0">
+                        IT
+                    </p>
+                    <p *ngSwitchCase="1">
+                        Продажи
+                    </p>
+                    <p *ngSwitchCase="2">
+                        Доставка
+                    </p>
+                    <p *ngSwitchCase="3">
+                        Юридический
+                    </p>
+                    <p *ngSwitchDefault></p>
+                </td> -->
+                <td class="text-right">
+                    <button class="btn btn-primary" (click)="onLinkProfile(worker.id)">
+                        Редактировать
+                    </button>
+                    <button class="btn btn-danger ml-4" (click)="onDelete(worker.id)">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
