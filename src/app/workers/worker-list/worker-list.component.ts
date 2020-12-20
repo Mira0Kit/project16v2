@@ -51,7 +51,7 @@ export class WorkerListComponent implements OnInit {
   sortId() {
     this.flag = true;
 
-    if (this.sBirth !== '-') 
+    if (this.sBirth !== '-')
       this.sBirth = "-";
 
     switch (this.sId) {
@@ -65,27 +65,27 @@ export class WorkerListComponent implements OnInit {
         this.sId = '-'
         break;
     }
- }
-
- sortBirth() {
-   this.flag = false;
-
-  if (this.sId !== '-') 
-    this.sId = "-";
-
-  switch (this.sBirth) {
-    case '-':
-      this.sBirth = '↓'
-      break;
-    case '↓':
-      this.sBirth = '↑'
-      break;
-    case '↑':
-      this.sBirth = '-'
-      break;
   }
- }
-  
+
+  sortBirth() {
+    this.flag = false;
+
+    if (this.sId !== '-')
+      this.sId = "-";
+
+    switch (this.sBirth) {
+      case '-':
+        this.sBirth = '↓'
+        break;
+      case '↓':
+        this.sBirth = '↑'
+        break;
+      case '↑':
+        this.sBirth = '-'
+        break;
+    }
+  }
+
 
   onAddProfile() {
     this.router.navigate([this.router.url, 'profile']);
