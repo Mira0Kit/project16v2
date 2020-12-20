@@ -6,7 +6,7 @@
       "patronymic": "Иванович",
       "number": "+7(653)895-26-34",
       "email": "sidr@mail.ru",
-      "birthdate": "09.02.1994",
+      "birthdate": "09.02.1984",
       "type": 2,
       "id": 2
     },
@@ -28,7 +28,7 @@
       "email": "ivanovww@ma",
       "birthdate": "11.01.1965",
       "type": 3,
-      "id": 4
+      "id": 1
     },
     {
       "name": "Иван",

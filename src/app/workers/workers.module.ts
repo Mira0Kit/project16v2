@@ -8,7 +8,9 @@ import { WorkerEditComponent } from './worker-edit/worker-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { WorkerFilterPipe } from '../shared/pipes/worker-filter.pipe';
+import { SortPipe } from '../shared/pipes/sort.pipe';
 import { MomentModule } from 'ngx-moment';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { MomentModule } from 'ngx-moment';
     WorkersComponent,
     WorkerListComponent,
     WorkerEditComponent,
-    WorkerFilterPipe
+    WorkerFilterPipe,
+    SortPipe
   ],
   imports: [
     CommonModule,
